@@ -29,9 +29,8 @@ export const config  = {
         // 支持字符串形式(单个API地址)或数组形式(多个备选API地址)
         // 多个地址时，会按顺序检测可用性，并使用第一个可用的地址
         staticBaseUrl: [
-            'https://w5x8mu2a9943r.ezdemo.xyz/api/v1',
-            'https://skhsn6q4pnv95.ezdemo.xyz/api/v1',
-            'https://gy1v06omopzc8.ezdemo.xyz/api/v1'
+            'https://w858d8cx130b304o.hidder.org/api/v1',
+            'https://w858d8cx130b304o.hidd.me/api/v1'
         ],
       
         // 自动获取模式配置 (urlMode = 'auto'时使用)
@@ -49,7 +48,7 @@ export const config  = {
 
     // 是否启用中间件代理API请求
     // 设置为true时，所有API请求将通过中间件转发
-    API_MIDDLEWARE_ENABLED: true,
+    API_MIDDLEWARE_ENABLED: false,
   
     //=======================================================
     // 中间件服务器URL (不含路径) 开源地址 https://github.com/codeman857/EZ-Encrypt-Middleware
@@ -66,13 +65,13 @@ export const config  = {
 
     // ====================  网站基础配置  ====================
     SITE_CONFIG: {
-        siteName: 'EZ THEME',
-        siteDescription: 'EZ UI',
+        siteName: 'Hidder',
+        siteDescription: '',
         // copyright会自动使用当前年份
         copyright: `© ${new Date().getFullYear()} EZ THEME. All Rights Reserved.`,
 
         // 是否显示标题中的网站Logo (true=显示, false=隐藏)
-        showLogo: true,
+        showLogo: false,
 
         // Landing页面多语言标语
         landingText: {
@@ -89,7 +88,7 @@ export const config  = {
         // 自定义landing页面路径（相对于public目录
         // 例如：'testlandingpage.html'
         // 如果为空则不启用自定义landing页面
-        customLandingPage: ''
+        customLandingPage: 'landingpage.html'
     },
 
     // 默认语言和主题配置
@@ -127,7 +126,7 @@ export const config  = {
             enabled: false,
 
             // 弹窗标题
-            title: "用户须知 (可自定义开启)",
+            title: "用户须知",
 
             // 弹窗内容 (支持HTML)
             content: "<p><strong>欢迎使用我们的服务！</strong></p><p>请注意以下事项：</p><ul><li>请妥善保管您的账号信息</li><li>如有问题请联系客服</li></ul>",
@@ -183,7 +182,7 @@ export const config  = {
         autoSelectMaxPeriod: false, // 默认关闭
 
         // 是否隐藏周期选择标签 (true=隐藏, false=显示)
-        hidePeriodTabs: false, // 默认显示周期选择标签
+        hidePeriodTabs: true, // 默认显示周期选择标签
 
         // 库存紧张的阈值（当库存数量小于等于此值且大于0时显示库存紧张）
         lowStockThreshold: 5,
@@ -193,19 +192,15 @@ export const config  = {
 
         // 价格周期的显示顺序（从大到小）
         periodOrder: [
-            'three_year_price', // 三年
-            'two_year_price',   // 两年
             'year_price',       // 一年
-            'half_year_price',  // 半年
             'quarter_price',    // 季度
             'month_price',      // 月付
-            'onetime_price'     // 一次性
         ],
 
         // 商店弹窗配置
         popup: {
             // 是否启用弹窗
-            enabled: true,
+            enabled: false,
 
             // 弹窗标题
             title: "用户须知",
@@ -222,7 +217,7 @@ export const config  = {
     },
     ORDER_CONFIG: {
         // 下单前二次确认
-        confirmOrder: true,
+        confirmOrder: false,
         // 下单前二次确认内容
         confirmOrderContent: "<p><strong style='color: red'>无法提供相关教程和使用说明。</strong></p><p><strong style='color: red'>不会使用请勿购买，没有退款政策</strong></p>",
 
@@ -233,7 +228,7 @@ export const config  = {
         showUserEmail: false,
 
         // 是否为导入订阅按钮添加高光效果和填充底色 (true=添加效果, false=不添加效果)
-        importButtonHighlightBtnbgcolor: false,
+        importButtonHighlightBtnbgcolor: true,
 
         // ===============================
 
@@ -269,7 +264,7 @@ export const config  = {
     // 客户端下载配置
     CLIENT_CONFIG: {
         // 整个下载卡片显示控制
-        showDownloadCard: true,
+        showDownloadCard: false,
 
         // 平台显示控制 (true=显示, false=隐藏)
         showIOS: true,
@@ -295,7 +290,7 @@ export const config  = {
         showShadowrocket: true,
         showSurge: true,
         showStash: true,
-        showQuantumultX: true,
+        showQuantumultX: false,
         showHiddifyIOS: true,
         showSingboxIOS: true,
         showLoon: true,
@@ -325,7 +320,7 @@ export const config  = {
         showClashMetaX: true,
         showSurgeMac: true,
         showStashMac: true,
-        showQuantumultXMac: true,
+        showQuantumultXMac: false,
         showSingboxMac: true,
         showHiddifyMac: true
     },
@@ -346,13 +341,13 @@ export const config  = {
     // 安全配置 (仅包含前端域名授权开关，有利于保护您的主题不被别人窃取)
     SECURITY_CONFIG: {
         // 是否启用前端域名验证（前端域名检查，防止未授权域名访问）
-        enableFrontendDomainCheck: false
+        enableFrontendDomainCheck: true
     },
 
     // 授权的前端域名列表 (新增)
     AUTHORIZED_DOMAINS: [
-        "test.eztheme.test",
-        "test1.eztheme.test",
+        "www.hidder.org",
+        "www.hidd.me",
     ],
 
     // 验证码配置
@@ -429,13 +424,13 @@ export const config  = {
     // 充值相关配置
     WALLET_CONFIG: {
         // 预设充值金额选项（单位：元）
-        presetAmounts: [6, 30, 68, 128, 256, 328, 648, 1280],
+        presetAmounts: [100, 200, 500],
 
         // 默认选中的充值金额（如果设为null则不预选金额）
         defaultSelectedAmount: null,
 
         // 最小充值金额（单位：元）
-        minimumDepositAmount: 1
+        minimumDepositAmount: 10
     },
 
     // =======================================================
@@ -453,7 +448,7 @@ export const config  = {
             // 链接模式：'auto'=自动使用当前站点域名，'custom'=使用自定义域名
             linkMode: 'auto',
             // 自定义域名，当linkMode为'custom'时使用
-            customDomain: 'https://example.com'
+            customDomain: 'https://www.hidder.org'
         }
     },
 
@@ -535,7 +530,7 @@ export const config  = {
     // 客服系统配置
     CUSTOMER_SERVICE_CONFIG: {
         // 是否启用客服系统
-        enabled: false,
+        enabled: true,
 
         // 客服系统类型: 'crisp' 或 'other'
         // 注意：当客服类型为crisp时，系统会自动向Crisp传递用户数据
@@ -543,7 +538,7 @@ export const config  = {
         type: 'crisp',
 
         // 客服系统JS代码，请将您的客服系统提供的嵌入代码粘贴在这里
-        customHtml: '',
+        customHtml: '<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="2c410164-4a4f-4cb8-894e-6d6dd914cab9";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>',
 
         // 客服系统嵌入模式: 'popup'=弹出式页面, 'embed'=嵌入到每个页面
         // 'popup'模式: 点击客服图标会跳转到单独的客服页面
