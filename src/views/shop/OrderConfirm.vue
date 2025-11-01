@@ -1695,7 +1695,7 @@ export default {
 
       .card-badge {
 
-        display: flex;
+        display: none;
 
         align-items: center;
 

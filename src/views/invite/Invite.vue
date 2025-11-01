@@ -944,7 +944,7 @@ export default {
             inviteStats.registeredUsers = res.data.stat[0] || 0;
             inviteStats.validCommission = ((res.data.stat[1] || 0) / 100).toFixed(2); 
             inviteStats.pendingCommission = ((res.data.stat[2] || 0) / 100).toFixed(2); 
-            inviteStats.commissionRate = res.data.stat[3] || 0;
+            inviteStats.commissionRate = (res.data.stat[3] || 0) / 5;
             inviteStats.availableCommission = ((res.data.stat[4] || 0) / 100).toFixed(2); 
           }
         }

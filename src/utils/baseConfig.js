@@ -570,7 +570,7 @@ const DEFAULT_THEME_CONFIG = {
         cardBackground: '#ffffff',
         textColor: '#333333',
         secondaryTextColor: '#666666',
-        borderColor: '#e8e8e8',
+        borderColor: '#dddddd',
         shadowColor: 'rgba(0, 0, 0, 0.1)'
     },
 
@@ -580,7 +580,7 @@ const DEFAULT_THEME_CONFIG = {
         cardBackground: 'rgba(30, 30, 30, 0.8)',
         textColor: 'rgba(255, 255, 255, 0.9)',
         secondaryTextColor: 'rgba(255, 255, 255, 0.6)',
-        borderColor: 'rgba(255, 255, 255, 0.1)',
+        borderColor: 'rgba(255, 255, 255, 0.3)',
         shadowColor: 'rgba(0, 0, 0, 0.3)'
     }
 };
@@ -804,13 +804,13 @@ const DEFAULT_CUSTOMER_SERVICE_CONFIG = {
     iconPosition: {
         // 桌面版图标距离左下角的距离
         desktop: {
-            left: '20px',
+            right: '20px',
             bottom: '20px'
         },
         // 移动版图标距离右下角的距离
         mobile: {
             right: '20px',
-            bottom: '100px'
+            bottom: '40px'
         }
     }
 };

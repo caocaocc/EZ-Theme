@@ -157,56 +157,6 @@ export default {
 
       },
 
-      {
-
-        code: 'ja-JP',
-
-        name: '日本語',
-
-        flag: `<img src="${jpFlag}" alt="日本語" class="flag-image" style="width: 100%; height: 100%; object-fit: cover;">`
-
-      },
-
-      {
-
-        code: 'ko-KR',
-
-        name: '한국어',
-
-        flag: `<img src="${krFlag}" alt="한국어" class="flag-image" style="width: 100%; height: 100%; object-fit: cover;">`
-
-      },
-
-      {
-
-        code: 'ru-RU',
-
-        name: 'Русский',
-
-        flag: `<img src="${ruFlag}" alt="Русский" class="flag-image" style="width: 100%; height: 100%; object-fit: cover;">`
-
-      },
-
-      {
-
-        code: 'fa-IR',
-
-        name: 'فارسی',
-
-        flag: `<img src="${irFlag}" alt="فارسی" class="flag-image" style="width: 100%; height: 100%; object-fit: cover;">`
-
-      },
-
-      {
-
-        code: 'vi-VN',
-
-        name: 'Tiếng Việt',
-
-        flag: `<img src="${vnFlag}" alt="Tiếng Việt" class="flag-image" style="width: 100%; height: 100%; object-fit: cover;">`
-
-      },
-
     ];
 
 

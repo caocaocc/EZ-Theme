@@ -211,15 +211,15 @@ export default {
         pendingOrders: '待支付订单',
         pendingTickets: '待回复工单',
         pendingInvites: '待管理员处理佣金',
-        officialClients: '官方客户端',
+        officialClients: '推荐客户端',
         deviceLimit: '在线设备',
         unlimited: '不限制',
         nextResetTime: '下次重置时间',
 
         importTitle: '选择导入方式',
-        copySubscription: '复制订阅地址',
+        copySubscription: '复制订阅',
         copySubscriptionDesc: '复制订阅链接到剪贴板',
-        scanQRCode: '扫描二维码订阅',
+        scanQRCode: '扫码订阅',
         scanQRCodeDesc: '使用客户端扫描二维码导入',
         importToShadowrocket: '导入到 Shadowrocket',
         importToSurge: '导入到 Surge',
@@ -239,7 +239,7 @@ export default {
         ios: 'iOS',
         android: 'Android',
         windows: 'Windows',
-        macos: 'MacOS'
+        macos: 'macOS'
     },
     menu: {
         dashboard: '仪表盘',
@@ -507,19 +507,19 @@ export default {
                 sold_out: '已售罄'
             },
             periods: {
-                month: ' / 月付',
-                quarter: ' / 季度',
+                month: ' / 月',
+                quarter: ' / 季',
                 half_year: ' / 半年',
-                year: ' / 一年',
+                year: ' / 年',
                 two_year: ' / 两年',
                 three_year: ' / 三年',
                 onetime: ' / 一次性'
             },
             price_options: {
-                month: '月付',
-                quarter: '季度',
+                month: '包月',
+                quarter: '包季',
                 half_year: '半年',
-                year: '一年',
+                year: '包年',
                 two_year: '两年',
                 three_year: '三年',
                 onetime: '一次性',
@@ -840,7 +840,7 @@ export default {
         actualTraffic: '实际使用',
         deductedTraffic: '扣除流量',
         formula: '计算公式',
-        formulaContent: '(实际上行 + 实际下行) × 倍率 = 扣除流量',
+        formulaContent: '总流量 × 倍率 = 扣除流量',
         noTrafficData: '暂无流量使用记录',
         loadingTraffic: '正在加载流量数据...',
         errorLoadingTraffic: '加载流量数据失败',

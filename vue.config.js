@@ -134,4 +134,6 @@ module.exports = defineConfig({
   },
   
   devServer: { client: { overlay: false } },
+  // 开发环境
+  // devServer: { host: '0.0.0.0', port: 8080, allowedHosts: 'all', client: { overlay: false } },
 });

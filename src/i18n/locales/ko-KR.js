@@ -236,7 +236,7 @@ export default {
     ios: 'iOS',
     android: 'Android',
     windows: 'Windows',
-    macos: 'MacOS'
+    macos: 'macOS'
   },
   menu: {
     dashboard: '대시보드',
@@ -836,7 +836,7 @@ export default {
     actualTraffic: '실제 사용',
     deductedTraffic: '차감 트래픽',
     formula: '계산 공식',
-    formulaContent: '(실제 업로드 + 실제 다운로드) × 비율 = 차감 트래픽',
+    formulaContent: '총 트래픽 × 비율 = 차감 트래픽',
     noTrafficData: '트래픽 사용 기록 없음',
     loadingTraffic: '트래픽 데이터 로딩 중...',
     errorLoadingTraffic: '트래픽 데이터 로드 실패',

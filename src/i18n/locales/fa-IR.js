@@ -236,7 +236,7 @@ export default {
     ios: 'iOS',
     android: 'Android',
     windows: 'Windows',
-    macos: 'MacOS'
+    macos: 'macOS'
   },
   menu: {
     dashboard: 'داشبورد',

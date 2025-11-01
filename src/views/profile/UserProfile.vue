@@ -1723,7 +1723,7 @@ const formatDeviceInfo = (ua) => {
 
   } else if (uaLower.includes('macintosh') || uaLower.includes('mac os')) {
 
-    deviceType = 'MacOS';
+    deviceType = 'macOS';
 
   } else if (uaLower.includes('linux')) {
 

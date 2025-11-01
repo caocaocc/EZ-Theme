@@ -236,7 +236,7 @@ export default {
     ios: 'iOS',
     android: 'Android',
     windows: 'Windows',
-    macos: 'MacOS'
+    macos: 'macOS'
   },
   menu: {
     dashboard: 'Панель управления',
@@ -835,7 +835,7 @@ export default {
     actualTraffic: 'Фактическое использование',
     deductedTraffic: 'Списанный трафик',
     formula: 'Формула расчета',
-    formulaContent: '(Фактический входящий + исходящий) × коэффициент = списанный трафик',
+    formulaContent: 'Общий трафик × коэффициент = списанный трафик',
     noTrafficData: 'Нет записей об использовании трафика',
     loadingTraffic: 'Загрузка данных о трафике...',
     errorLoadingTraffic: 'Ошибка загрузки данных о трафике',
