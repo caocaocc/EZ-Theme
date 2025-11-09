@@ -10,9 +10,9 @@
 
       <img :src="require('@/assets/i18N/CN.svg')" alt="中文" class="preload-flag">
 
-      <img :src="require('@/assets/i18N/GB.svg')" alt="English" class="preload-flag">
+      <img :src="require('@/assets/i18N/US.svg')" alt="English" class="preload-flag">
 
-      <img :src="require('@/assets/i18N/HK.svg')" alt="繁體中文" class="preload-flag">
+      <img :src="require('@/assets/i18N/TW.svg')" alt="繁體中文" class="preload-flag">
 
       <img :src="require('@/assets/i18N/JP.svg')" alt="日本語" class="preload-flag">
 
@@ -97,9 +97,9 @@ import vnFlag from '@/assets/i18N/VN.svg';
 
 import cnFlag from '@/assets/i18N/CN.svg';
 
-import gbFlag from '@/assets/i18N/GB.svg';
+import gbFlag from '@/assets/i18N/US.svg';
 
-import hkFlag from '@/assets/i18N/HK.svg';
+import hkFlag from '@/assets/i18N/TW.svg';
 
 import jpFlag from '@/assets/i18N/JP.svg';
 
@@ -154,56 +154,6 @@ export default {
         name: 'English',
 
         flag: `<img src="${gbFlag}" alt="English" class="flag-image" style="width: 100%; height: 100%; object-fit: cover;">`
-
-      },
-
-      {
-
-        code: 'ja-JP',
-
-        name: '日本語',
-
-        flag: `<img src="${jpFlag}" alt="日本語" class="flag-image" style="width: 100%; height: 100%; object-fit: cover;">`
-
-      },
-
-      {
-
-        code: 'ko-KR',
-
-        name: '한국어',
-
-        flag: `<img src="${krFlag}" alt="한국어" class="flag-image" style="width: 100%; height: 100%; object-fit: cover;">`
-
-      },
-
-      {
-
-        code: 'ru-RU',
-
-        name: 'Русский',
-
-        flag: `<img src="${ruFlag}" alt="Русский" class="flag-image" style="width: 100%; height: 100%; object-fit: cover;">`
-
-      },
-
-      {
-
-        code: 'fa-IR',
-
-        name: 'فارسی',
-
-        flag: `<img src="${irFlag}" alt="فارسی" class="flag-image" style="width: 100%; height: 100%; object-fit: cover;">`
-
-      },
-
-      {
-
-        code: 'vi-VN',
-
-        name: 'Tiếng Việt',
-
-        flag: `<img src="${vnFlag}" alt="Tiếng Việt" class="flag-image" style="width: 100%; height: 100%; object-fit: cover;">`
 
       },
 

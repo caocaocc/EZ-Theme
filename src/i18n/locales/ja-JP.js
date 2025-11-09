@@ -236,7 +236,7 @@ export default {
     ios: 'iOS',
     android: 'Android',
     windows: 'Windows',
-    macos: 'MacOS'
+    macos: 'macOS'
   },
   menu: {
     dashboard: 'ダッシュボード',
@@ -835,7 +835,7 @@ export default {
     actualTraffic: '実際の使用量',
     deductedTraffic: '扣除流量',
     formula: '計算式',
-    formulaContent: '(実際のアップロード + 実際のダウンロード) × レート = 扣除流量',
+    formulaContent: '総流量 × レート = 扣除流量',
     noTrafficData: '流量使用記録なし',
     loadingTraffic: '流量データ読み込み中...',
     errorLoadingTraffic: '流量データ読み込み失敗',

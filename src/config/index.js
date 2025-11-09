@@ -23,14 +23,13 @@ export const config  = {
         urlMode: 'static',
       
         // 是否展示后端联通性检测
-        showCheckBackend: false,
+        showCheckBackend: true,
       
         // 静态URL模式下的基础URL (urlMode = 'static'时使用)
         // 支持字符串形式(单个API地址)或数组形式(多个备选API地址)
         // 多个地址时，会按顺序检测可用性，并使用第一个可用的地址
         staticBaseUrl: [
             'https://w5x8mu2a9943r.ezdemo.xyz/api/v1',
-            'https://skhsn6q4pnv95.ezdemo.xyz/api/v1',
             'https://gy1v06omopzc8.ezdemo.xyz/api/v1'
         ],
       
@@ -49,7 +48,7 @@ export const config  = {
 
     // 是否启用中间件代理API请求
     // 设置为true时，所有API请求将通过中间件转发
-    API_MIDDLEWARE_ENABLED: true,
+    API_MIDDLEWARE_ENABLED: false,
   
     //=======================================================
     // 中间件服务器URL (不含路径) 开源地址 https://github.com/codeman857/EZ-Encrypt-Middleware
@@ -72,7 +71,7 @@ export const config  = {
         copyright: `© ${new Date().getFullYear()} EZ THEME. All Rights Reserved.`,
 
         // 是否显示标题中的网站Logo (true=显示, false=隐藏)
-        showLogo: true,
+        showLogo: false,
 
         // Landing页面多语言标语
         landingText: {
@@ -89,7 +88,7 @@ export const config  = {
         // 自定义landing页面路径（相对于public目录
         // 例如：'testlandingpage.html'
         // 如果为空则不启用自定义landing页面
-        customLandingPage: ''
+        customLandingPage: 'landingpage.html'
     },
 
     // 默认语言和主题配置
@@ -127,7 +126,7 @@ export const config  = {
             enabled: false,
 
             // 弹窗标题
-            title: "用户须知 (可自定义开启)",
+            title: "用户须知",
 
             // 弹窗内容 (支持HTML)
             content: "<p><strong>欢迎使用我们的服务！</strong></p><p>请注意以下事项：</p><ul><li>请妥善保管您的账号信息</li><li>如有问题请联系客服</li></ul>",
@@ -143,14 +142,14 @@ export const config  = {
     // 认证页面布局配置
     AUTH_LAYOUT_CONFIG: {
         // 布局类型: 'center' 为居中卡片布局, 'split' 为左右分栏布局
-        layoutType: 'center',
+        layoutType: 'split',
 
         // 左右分栏布局配置 (仅当 layoutType 为 'split' 时生效)
         splitLayout: {
             // 左侧区域内容配置
             leftContent: {
                 // 左侧背景图片URL或路径 (如不设置则不设置图片背景)
-                backgroundImage: 'https://www.loliapi.com/acg',
+                backgroundImage: 'https://bing.img.run/rand.php',
 
                 // 左上角网站名称配置
                 siteName: {
@@ -163,7 +162,7 @@ export const config  = {
                 // 左下角问候语配置
                 greeting: {
                     // 是否显示问候语
-                    show: true,
+                    show: false,
                     // 文字颜色 (white或black)
                     color: 'white'
                 }
@@ -205,7 +204,7 @@ export const config  = {
         // 商店弹窗配置
         popup: {
             // 是否启用弹窗
-            enabled: true,
+            enabled: false,
 
             // 弹窗标题
             title: "用户须知",
@@ -233,7 +232,7 @@ export const config  = {
         showUserEmail: false,
 
         // 是否为导入订阅按钮添加高光效果和填充底色 (true=添加效果, false=不添加效果)
-        importButtonHighlightBtnbgcolor: false,
+        importButtonHighlightBtnbgcolor: true,
 
         // ===============================
 
@@ -295,7 +294,7 @@ export const config  = {
         showShadowrocket: true,
         showSurge: true,
         showStash: true,
-        showQuantumultX: true,
+        showQuantumultX: false,
         showHiddifyIOS: true,
         showSingboxIOS: true,
         showLoon: true,
@@ -325,7 +324,7 @@ export const config  = {
         showClashMetaX: true,
         showSurgeMac: true,
         showStashMac: true,
-        showQuantumultXMac: true,
+        showQuantumultXMac: false,
         showSingboxMac: true,
         showHiddifyMac: true
     },
@@ -429,13 +428,13 @@ export const config  = {
     // 充值相关配置
     WALLET_CONFIG: {
         // 预设充值金额选项（单位：元）
-        presetAmounts: [6, 30, 68, 128, 256, 328, 648, 1280],
+        presetAmounts: [50, 100, 200, 500],
 
         // 默认选中的充值金额（如果设为null则不预选金额）
         defaultSelectedAmount: null,
 
         // 最小充值金额（单位：元）
-        minimumDepositAmount: 1
+        minimumDepositAmount: 10
     },
 
     // =======================================================
@@ -489,7 +488,7 @@ export const config  = {
         // 弹窗配置
         popup: {
             // 是否启用弹窗
-            enabled: true,
+            enabled: false,
             // 弹窗标题
             title: "工单须知",
             // 弹窗内容 (支持HTML)
@@ -535,7 +534,7 @@ export const config  = {
     // 客服系统配置
     CUSTOMER_SERVICE_CONFIG: {
         // 是否启用客服系统
-        enabled: false,
+        enabled: true,
 
         // 客服系统类型: 'crisp' 或 'other'
         // 注意：当客服类型为crisp时，系统会自动向Crisp传递用户数据
@@ -557,13 +556,13 @@ export const config  = {
         iconPosition: {
             // 桌面版图标距离左下角的距离
             desktop: {
-                left: '20px',
+                right: '20px',
                 bottom: '20px'
             },
             // 移动版图标距离右下角的距离
             mobile: {
                 right: '20px',
-                bottom: '100px'
+                bottom: '40px'
             }
         }
     },
@@ -573,13 +572,13 @@ export const config  = {
         // 可选值: 'invite', 'docs', 'tickets', 'nodes', 'orders', 'traffic', 'wallet', 'profile'
         // 'wallet' 只有 xiao-v2board 支持 非 xiao-v2board 面板请勿设置为 wallet
         // 默认值为 'invite'
-        thirdNavItem: 'invite',
+        thirdNavItem: 'docs',
 
         // 可选：第四个导航项（插入在“更多”之前）。为空字符串或未设置则不插入
         // 可选值同上: 'invite', 'docs', 'tickets', 'nodes', 'orders', 'traffic', 'wallet', 'profile'
         // 默认值为 'docs'
         // 注意：如果第三个导航项设置为 'invite'，则第四个导航项不能设置为 'invite'
-        fourthNavItem: 'docs',
+        fourthNavItem: 'invite',
     },
 
     // More页面自定义卡片配置

@@ -132,6 +132,17 @@ export default {
     
     const customerServiceConfig = computed(() => CUSTOMER_SERVICE_CONFIG);
     
+    const updateTopVisibility = (event) => {
+      const offsets = [
+        window.scrollY || window.pageYOffset || 0,
+        document.documentElement?.scrollTop || 0,
+        document.body?.scrollTop || 0,
+        event?.target?.scrollTop || 0
+      ];
+
+      document.body.classList.toggle('page-not-at-top', Math.max(...offsets) > 0);
+    };
+
     router.beforeEach((to, from, next) => {
       if (to.meta.keepAlive && to.name) {
         pageCache.addRouteToCache(to.name);
@@ -147,6 +158,7 @@ export default {
     
     router.afterEach(() => {
       NProgress.done();
+      updateTopVisibility();
     });
     
     const handleRedirectParam = () => {
@@ -173,6 +185,7 @@ export default {
     
     watch(() => route.fullPath, () => {
       handleRedirectParam();
+      updateTopVisibility();
     });
     
     const username = computed(() => store.getters.username);
@@ -223,7 +236,11 @@ export default {
     
     onMounted(() => {
       window.addEventListener('languageChanged', onLanguageChanged);
-      
+
+      window.addEventListener('scroll', updateTopVisibility, { passive: true });
+      document.addEventListener('scroll', updateTopVisibility, { passive: true, capture: true });
+      updateTopVisibility();
+
       applyTheme(store.getters.currentTheme);
       
       checkAuthAndReloadMessages();
@@ -247,6 +264,9 @@ export default {
     onUnmounted(() => {
       window.removeEventListener('languageChanged', onLanguageChanged);
       document.removeEventListener('visibilitychange', handleVisibilityChange);
+
+      window.removeEventListener('scroll', updateTopVisibility);
+      document.removeEventListener('scroll', updateTopVisibility, true);
     });
     
     return {
@@ -346,6 +366,10 @@ export default {
   }
 }
 
+body.page-not-at-top .site-logo,
+body.page-not-at-top .top-toolbar {
+  display: none !important;
+}
 
 @media (max-width: 768px) {
   .site-logo {

@@ -239,7 +239,7 @@ export default {
         ios: 'iOS',
         android: 'Android',
         windows: 'Windows',
-        macos: 'MacOS'
+        macos: 'macOS'
     },
     menu: {
         dashboard: 'Dashboard',
@@ -840,7 +840,7 @@ export default {
         actualTraffic: 'Actual Usage',
         deductedTraffic: 'Deducted Traffic',
         formula: 'Calculation Formula',
-        formulaContent: '(Actual Upload + Actual Download) × Rate = Deducted Traffic',
+        formulaContent: 'Total Traffic × Rate = Deducted Traffic',
         noTrafficData: 'No traffic usage records',
         loadingTraffic: 'Loading traffic data...',
         errorLoadingTraffic: 'Failed to load traffic data',

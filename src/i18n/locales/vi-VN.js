@@ -245,7 +245,7 @@ export default {
         ios: 'iOS',
         android: 'Android',
         windows: 'Windows',
-        macos: 'MacOS'
+        macos: 'macOS'
     },
     menu: {
         dashboard: 'Trang chủ',
@@ -835,7 +835,7 @@ export default {
         actualTraffic: 'Sử dụng thực tế',
         deductedTraffic: 'Lưu lượng bị trừ',
         formula: 'Công thức tính',
-        formulaContent: '(Tải lên thực tế + Tải xuống thực tế) × Tỷ lệ = Lưu lượng bị trừ',
+        formulaContent: 'Tổng lưu lượng × Tỷ lệ = Lưu lượng bị trừ',
         noTrafficData: 'Chưa có bản ghi sử dụng lưu lượng',
         loadingTraffic: 'Đang tải dữ liệu lưu lượng...',
         errorLoadingTraffic: 'Tải dữ liệu lưu lượng thất bại',

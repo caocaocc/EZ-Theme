@@ -178,6 +178,22 @@
                 <span class="">{{ $t('dashboard.importSubscription') }}</span>
               </button>
               <button
+                  v-if="showImportSubscription && hasSubscriptionUrl"
+                  class="btn-outline"
+                  @click="copySubscription"
+              >
+                <IconCopy :size="16" class="btn-icon"/>
+                <span class="">{{ $t('dashboard.copySubscription') }}</span>
+              </button>
+              <button
+                  v-if="showImportSubscription && hasSubscriptionUrl"
+                  class="btn-outline"
+                  @click="showQrCode = true"
+              >
+                <IconQrcode :size="16" class="btn-icon"/>
+                <span class="">{{ $t('dashboard.scanQRCode') }}</span>
+              </button>
+              <button
                   v-if="showRenewPlanButton"
                   class="btn-outline renew-plan-btn"
                   :class="{
@@ -262,7 +278,7 @@
 
             <!-- iOS平台选项 -->
             <div v-if="activePlatform === 'ios'" class="platform-section">
-              <div class="platform-title">iOS</div>
+              <div class="platform-title"></div>
               <div v-if="hasIOSClients" class="platform-options">
                 <div v-if="clientConfig.showShadowrocket" class="platform-option"
                      @click="importToClient('shadowrocket')">
@@ -286,8 +302,8 @@
                   <span>Hiddify</span>
                 </div>
                 <div v-if="clientConfig.showSingboxIOS" class="platform-option" @click="importToClient('singbox-ios')">
-                  <img :src="singboxIcon" class="client-icon" alt="Singbox"/>
-                  <span>Singbox</span>
+                  <img :src="singboxIcon" class="client-icon" alt="sing-box"/>
+                  <span>sing-box</span>
                 </div>
                 <div v-if="clientConfig.showLoon" class="platform-option" @click="importToClient('loon')">
                   <img :src="loonIcon" class="client-icon" alt="Loon"/>
@@ -301,7 +317,7 @@
 
             <!-- Android平台选项 -->
             <div v-if="activePlatform === 'android'" class="platform-section">
-              <div class="platform-title">Android</div>
+              <div class="platform-title"></div>
               <div v-if="hasAndroidClients" class="platform-options">
                 <div v-if="clientConfig.showFlClashAndroid" class="platform-option" @click="importToClient('flclash')">
                   <img :src="flclashIcon" class="client-icon" alt="FlClash"/>
@@ -331,8 +347,8 @@
                 </div>
                 <div v-if="clientConfig.showSingboxAndroid" class="platform-option"
                      @click="importToClient('singbox-android')">
-                  <img :src="singboxAndroidIcon" class="client-icon" alt="Singbox"/>
-                  <span>Singbox</span>
+                  <img :src="singboxAndroidIcon" class="client-icon" alt="sing-box"/>
+                  <span>sing-box</span>
                 </div>
                 <div v-if="clientConfig.showHiddifyAndroid" class="platform-option"
                      @click="importToClient('hiddify-android')">
@@ -347,7 +363,7 @@
 
             <!-- Windows平台选项 -->
             <div v-if="activePlatform === 'windows'" class="platform-section">
-              <div class="platform-title">Windows</div>
+              <div class="platform-title"></div>
               <div v-if="hasWindowsClients" class="platform-options">
                 <div v-if="clientConfig.showFlClashWindows" class="platform-option" @click="importToClient('flclash')">
                   <img :src="flclashIcon" class="client-icon" alt="FlClash"/>
@@ -367,8 +383,8 @@
                 </div>
                 <div v-if="clientConfig.showSingboxWindows" class="platform-option"
                      @click="importToClient('singbox-windows')">
-                  <img :src="singboxWindowsIcon" class="client-icon" alt="Singbox"/>
-                  <span>Singbox</span>
+                  <img :src="singboxWindowsIcon" class="client-icon" alt="sing-box"/>
+                  <span>sing-box</span>
                 </div>
                 <div v-if="clientConfig.showHiddifyWindows" class="platform-option"
                      @click="importToClient('hiddify-windows')">
@@ -383,7 +399,7 @@
 
             <!-- MacOS平台选项 -->
             <div v-if="activePlatform === 'macos'" class="platform-section">
-              <div class="platform-title">MacOS</div>
+              <div class="platform-title"></div>
               <div v-if="hasMacOSClients" class="platform-options">
                 <div v-if="clientConfig.showFlClashMac" class="platform-option" @click="importToClient('flclash')">
                   <img :src="flclashIcon" class="client-icon" alt="FlClash"/>
@@ -416,8 +432,8 @@
                 </div>
                 <div v-if="clientConfig.showSingboxMac" class="platform-option"
                      @click="importToClient('singbox-macos')">
-                  <img :src="singboxMacIcon" class="client-icon" alt="Singbox"/>
-                  <span>Singbox</span>
+                  <img :src="singboxMacIcon" class="client-icon" alt="sing-box"/>
+                  <span>sing-box</span>
                 </div>
                 <div v-if="clientConfig.showHiddifyMac" class="platform-option"
                      @click="importToClient('hiddify-macos')">
@@ -510,7 +526,7 @@
             <div class="water-container">
               <div class="water-progress"
                    :class="{'animate-water': waterAnimationState.canAnimate}"
-                   :style="{ height: waterAnimationState.canAnimate ? `${trafficPercentage}%` : '0%' }">
+                   :style="{ width: waterAnimationState.canAnimate ? `${trafficPercentage}%` : '0%' }">
               </div>
             </div>
           </div>
@@ -592,18 +608,18 @@
               <div class="option-name">Android</div>
             </div>
 
-            <div class="download-option" v-if="clientConfig.showMacOS" @click="downloadClient('macos')">
-              <div class="option-icon macos">
-                <IconBrandFinder :size="32"/>
-              </div>
-              <div class="option-name">MacOS</div>
-            </div>
-
             <div class="download-option" v-if="clientConfig.showWindows" @click="downloadClient('windows')">
               <div class="option-icon windows">
                 <IconBrandWindows :size="32"/>
               </div>
               <div class="option-name">Windows</div>
+            </div>
+
+            <div class="download-option" v-if="clientConfig.showMacOS" @click="downloadClient('macos')">
+              <div class="option-icon macos">
+                <IconBrandFinder :size="32"/>
+              </div>
+              <div class="option-name">macOS</div>
             </div>
 
             <div class="download-option" v-if="clientConfig.showLinux" @click="downloadClient('linux')">
@@ -869,6 +885,7 @@ export default {
     });
     const qrCodeLoading = ref(true);
     const showImportSubscription = ref(DASHBOARD_CONFIG.showImportSubscription)
+    const hasSubscriptionUrl = computed(() => Boolean(userPlan.value?.subscribeUrl));
 
     const languageChangedSignal = inject('languageChangedSignal', ref(0));
 
@@ -1955,6 +1972,7 @@ export default {
       DASHBOARD_CONFIG,
       allowNewPeriod,
       showImportSubscription,
+      hasSubscriptionUrl,
     };
   }
 };
@@ -2025,9 +2043,11 @@ export default {
     .subscription-info {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 48px;
       margin-bottom: 15px;
-
+      @media (max-width: 768px) {
+        gap: 20px;
+      }
       .info-item {
         display: flex;
         flex-direction: column;
@@ -2147,16 +2167,16 @@ export default {
 
       .water-progress {
         position: absolute;
+        top: 0;
         left: 0;
-        bottom: 0;
-        width: 100%;
+        height: 100%;
         background-color: rgba(var(--theme-color-rgb), 0.12);
         transition: none;
-        border-radius: 0 0 16px 16px;
-        height: 0;
+        border-radius: 16px 0 0 16px;
+        width: 0;
 
         &.animate-water {
-          transition: height 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          transition: width 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         &:after {
@@ -2889,7 +2909,7 @@ export default {
 }
 
 .import-action {
-  display: flex;
+  display: none;
   align-items: center;
   padding: 16px;
   border-radius: 10px;

@@ -1378,7 +1378,7 @@ export default {
 
       .card-badge {
 
-        display: flex;
+        display: none;
 
         align-items: center;
 
@@ -1634,7 +1634,7 @@ export default {
 
   .stats-grid {
 
-    display: grid;
+    display: none;
 
     grid-template-columns: repeat(4, 1fr);
 
@@ -1860,7 +1860,7 @@ export default {
 
         .card-badge {
 
-          display: flex;
+          display: none;
 
           align-items: center;
 
@@ -2107,6 +2107,8 @@ export default {
             
 
             &.disabled {
+
+              display: none;
 
               opacity: 0.5;
 
@@ -2492,7 +2494,7 @@ export default {
 
     margin-bottom: 30px;
 
-    display: flex;
+    display: none;
 
     justify-content: center;
 
